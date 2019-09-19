@@ -1,3 +1,4 @@
+package Tables;
 import java.sql.*;
 public class Connexion {
 	public Connection creeConnexion() {

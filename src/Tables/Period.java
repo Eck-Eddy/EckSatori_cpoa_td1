@@ -1,3 +1,4 @@
+package Tables;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -34,9 +35,7 @@ public class Period {
 			Connection laConnexion = connexion.creeConnexion();
 			Statement requete = laConnexion.createStatement();
 			int res = requete.executeUpdate(""
-					+ "UPDATE Periodicite"
-					+ "SET libelle = '" +newlib+ "' "
-					+ "WHERE id_periodicite ="+id);
+					+ "UPDATE Periodicite SET libelle = '" +newlib+ "' WHERE id_periodicite ="+id);
 			laConnexion.close();
 
 			 
@@ -51,7 +50,7 @@ public class Period {
 			connexion = new Connexion();
 			Connection laConnexion = connexion.creeConnexion();
 			Statement requete = laConnexion.createStatement();
-			int res = requete.executeUpdate("DELETE FROM Periodicite (libelle) WHERE libelle = '"+lib+"'");
+			int res = requete.executeUpdate("DELETE FROM Periodicite WHERE libelle = '"+lib+"'");
 			laConnexion.close();
 
 			 
